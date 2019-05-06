@@ -6,9 +6,9 @@ filetype off
 "set ttyfast
 set mouse=a
 set t_Co=256
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
 
 set foldcolumn=3
 
@@ -25,10 +25,14 @@ let g:SimpylFold_docstring_preview=1
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'vim-scripts/indentpython.vim'
 
+" powerline
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" navigatioe
+Plugin 'scrooloose/nerdtree'
+
 " auto-completion
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 filetype plugin indent on
@@ -72,10 +76,14 @@ map <Leader>5 99<C-W><Up>4<C-W>j<C-W>_
 map <Leader>d Oimport pdb; pdb.set_trace()^[
 
 inoremap jk <esc>
+set nu
+nnoremap <Leader>n :NERDTree<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-]> g<C-]>
+noremap <C-]> g<C-]>
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
