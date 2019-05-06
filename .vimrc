@@ -86,4 +86,9 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 noremap <C-]> g<C-]>
 
+" edit and source .vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" surround with double quotes
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
