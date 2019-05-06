@@ -77,7 +77,7 @@ map <Leader>d Oimport pdb; pdb.set_trace()^[
 
 inoremap jk <esc>
 set nu
-nnoremap <Leader>n :NERDTree<CR>
+nnoremap <Leader>t :NERDTree<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -92,3 +92,4 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " surround with double quotes
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
