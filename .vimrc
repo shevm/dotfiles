@@ -93,3 +93,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " surround with double quotes
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 
+set splitbelow
+set splitright
+
+nnoremap <F5> :w<CR>:!clear;python %<CR>
+inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>
+
+"adjusting split size
