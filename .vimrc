@@ -1,3 +1,7 @@
+set nocompatible        "required
+filetype off            "required
+
+
 "=====PLUGIN MANAGER====="
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -8,38 +12,43 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'tpope/vim-surround', {'rtp': 'tpope/vim-surround'}
+Plugin 'Lokaltog/powerline'
+Plugin 'tpope/vim-surround'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()            " required
 
 
 "=====PREFERENCES====="
 
-filetype off
 filetype plugin indent on
 syntax on
 
 set encoding=utf-8
 set nu
 set relativenumber
-"set backupdir=~/vimfiles/tmp,.
-"set directory=~/vimfiles/tmp,.
-set pastetoggle=<F10>
+set scrolloff=999
+"set pastetoggle=<F10>
 set expandtab
 set listchars=tab:>-
 set list
-set splitbelow
-set splitright
 set nocompatible
+
+"Background Preferences
+set  t_Co=256
 set background=dark
+
+"Fold Preferences
 "set foldcolumn=3
 "setlocal foldmethod=expr
 
+"set backupdir=~/vimfiles/tmp,.
+"set directory=~/vimfiles/tmp,.
 
-"bindings
+
+"Bindings
 let python_highlight_all=1
-let mapleader = ";"
+let mapleader = "\\"
 
 
 nnoremap <F5> :w<CR>:!clear;python %<CR>
@@ -51,7 +60,9 @@ nnoremap <space> za
 inoremap jk <esc>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>
 
-"split navigations
+"split settings
+set splitbelow
+set splitright
 nnoremap <C-J> <C-W><C-J> nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
