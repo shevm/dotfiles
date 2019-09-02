@@ -38,6 +38,10 @@ set nocompatible
 set  t_Co=256
 set background=dark
 
+"File explorer
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+
 "Fold Preferences
 "set foldcolumn=3
 "setlocal foldmethod=expr
