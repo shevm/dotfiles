@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Lokaltog/powerline'
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'cjrh/vim-conda'
 
 call vundle#end()            " required
 
@@ -41,6 +42,10 @@ set background=dark
 "File explorer
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
+
+"Placeholders
+inoremap <c-j> <Esc>/<++><CR><Esc>cf>
+inoremap <Space><Space> /<++>ca>
 
 "Fold Preferences
 "set foldcolumn=3
