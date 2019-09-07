@@ -16,12 +16,17 @@ Plugin 'Lokaltog/powerline'
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'cjrh/vim-conda'
+Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
 
 call vundle#end()            " required
 
 
-"=====PREFERENCES====="
-
+"=====PREFERENCES=====
 filetype plugin indent on
 syntax on
 
@@ -44,35 +49,37 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 
 "Placeholders
-inoremap <c-j> <Esc>/<++><CR><Esc>cf>
-inoremap <Space><Space> /<++>ca>
+inoremap <C-j> <++>
+inoremap <SPACE><SPACE> <ESC>/<++><CR>ca>
 
 "Fold Preferences
 "set foldcolumn=3
 "setlocal foldmethod=expr
-
-"set backupdir=~/vimfiles/tmp,.
-"set directory=~/vimfiles/tmp,.
 
 
 "Bindings
 let python_highlight_all=1
 let mapleader = "\\"
 
+"git bindings
+nnoremap <Leader>gn :GitGutterNextHunk<CR>      " git next
+nnoremap <Leader>gp :GitGutterPrevHunk<CR>      " git previous
+nmap <Leader>ga :GitGutterStageHunk<CR>         " git add (chunk)
+nmap <Leader>gu :GitGutterUndoHunk<CR>          " git undo (chunk)
 
 nnoremap <F5> :w<CR>:!clear;python %<CR>
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <space> za
 
 inoremap jk <esc>
-inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>
+inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
 
 "split settings
 set splitbelow
 set splitright
-nnoremap <C-J> <C-W><C-J> nnoremap <C-K> <C-W><C-K>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 noremap <C-]> g<C-]>
