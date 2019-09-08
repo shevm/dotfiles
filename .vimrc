@@ -2,7 +2,7 @@ set nocompatible        "required
 filetype off            "required
 
 
-"=====PLUGIN MANAGER====="
+"=====PLUGIN MANAGER=====
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
-Plugin 'Lokaltog/powerline'
+Plugin 'powerline/powerline'
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'cjrh/vim-conda'
@@ -27,39 +27,66 @@ call vundle#end()            " required
 
 
 "=====PREFERENCES=====
+
+" Auto source .vimrc after save
+autocmd! bufwritepost .vimrc source %
+
+" Syntax and highlighting
 filetype plugin indent on
 syntax on
 
+
+" Behavior
 set encoding=utf-8
-set nu
-set relativenumber
-set scrolloff=999
-"set pastetoggle=<F10>
-set expandtab
 set listchars=tab:>-
 set list
-set nocompatible
+set scrolloff=999
 
-"Background Preferences
+
+" Color scheme
+let python_highlight_all=1
 set  t_Co=256
 set background=dark
+
+
+"Showing line numbers and length
+set nu
+set relativenumber
+set nowrap      " don't automatically wrap text while loading
+set fo-=t       " don't automatically wrap text while typing
+
 
 "File explorer
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 
-"Placeholders
-inoremap <C-j> <++>
-inoremap <SPACE><SPACE> <ESC>/<++><CR>ca>
 
 "Fold Preferences
 "set foldcolumn=3
 "setlocal foldmethod=expr
 
 
-"Bindings
-let python_highlight_all=1
-let mapleader = "\\"
+"Mapleader
+let mapleader = ","
+
+
+"=====KEYMAP=====
+
+"Placeholders
+inoremap <C-j> <++>
+nnoremap <SPACE><SPACE> /<++><CR>ca>
+inoremap <SPACE><SPACE> <ESC>/<++><CR>ca>
+
+
+"Better indentation
+vnoremap < <gv
+vnoremap > >gv
+
+
+"Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
 
 "git bindings
 nnoremap <Leader>gn :GitGutterNextHunk<CR>      " git next
@@ -67,13 +94,17 @@ nnoremap <Leader>gp :GitGutterPrevHunk<CR>      " git previous
 nmap <Leader>ga :GitGutterStageHunk<CR>         " git add (chunk)
 nmap <Leader>gu :GitGutterUndoHunk<CR>          " git undo (chunk)
 
+
 nnoremap <F5> :w<CR>:!clear;python %<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <space> za
 
+
+"Easy esc
 inoremap jk <esc>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
+
 
 "split settings
 set splitbelow
