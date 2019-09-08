@@ -23,6 +23,8 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 
+Plugin 'jreybert/vimagit'
+
 call vundle#end()            " required
 
 
@@ -95,9 +97,9 @@ nmap <Leader>ga :GitGutterStageHunk<CR>         " git add (chunk)
 nmap <Leader>gu :GitGutterUndoHunk<CR>          " git undo (chunk)
 
 
-nnoremap <F5> :w<CR>:!clear;python %<CR>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <F5> :w<CR>:!clear;python3 %<CR>
+nnoremap <leader>ev :vsplit ~/Documents/Projects/mylib/dotfiles/.vimrc<cr>
+" nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <space> za
 
 
