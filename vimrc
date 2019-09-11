@@ -49,6 +49,7 @@ set scrolloff=999
 let python_highlight_all=1
 set  t_Co=256
 set background=dark
+colo desert
 
 
 "Showing line numbers and length
