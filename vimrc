@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
-Plugin 'powerline/powerline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'cjrh/vim-conda'
@@ -24,6 +24,7 @@ let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 
 Plugin 'jreybert/vimagit'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 
@@ -48,8 +49,11 @@ set scrolloff=999
 " Color scheme
 let python_highlight_all=1
 set  t_Co=256
-set background=dark
-colo desert
+" colo desert
+if has('gui_running')
+  set background=dark
+  colorscheme desert
+endif
 
 
 "Showing line numbers and length
@@ -78,9 +82,13 @@ set ignorecase
 set smartcase
 
 
+" Disable backup
+set nobackup
+set nowritebackup
+set noswapfile
+
 
 "=====KEYMAP=====
-
 
 "Better indentation
 vnoremap < <gv
@@ -119,10 +127,21 @@ noremap <C-]> g<C-]>
 
 
 "File specific settings
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4 
+set textwidth=119 
+set expandtab 
+set autoindent 
+
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.cpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.c set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
+
+
+"=====ABBREVIATIONS=====
+iab MS Mikhail Shevchenko
 
