@@ -69,16 +69,17 @@ let g:netrw_winsize = 25
 "setlocal foldmethod=expr
 
 
-"Mapleader
+" Mapleader
 let mapleader = ","
 
 
-"=====KEYMAP=====
+" Better search
+set ignorecase
+set smartcase
 
-"Placeholders
-inoremap <C-j> <++>
-nnoremap <SPACE><SPACE> /<++><CR>ca>
-inoremap <SPACE><SPACE> <ESC>/<++><CR>ca>
+
+
+"=====KEYMAP=====
 
 
 "Better indentation
@@ -92,15 +93,13 @@ set clipboard=unnamed
 
 
 "git bindings
-nnoremap <Leader>gn :GitGutterNextHunk<CR>      " git next
-nnoremap <Leader>gp :GitGutterPrevHunk<CR>      " git previous
-nmap <Leader>ga :GitGutterStageHunk<CR>         " git add (chunk)
-nmap <Leader>gu :GitGutterUndoHunk<CR>          " git undo (chunk)
+nnoremap <Leader>hn :GitGutterNextHunk<CR>      " git next
+nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " git previous
 
 
 nnoremap <F5> :w<CR>:!clear;python3 %<CR>
-nnoremap <leader>ev :vsplit ~/Documents/Projects/mylib/dotfiles/.vimrc<cr>
-" nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+" nnoremap <Leader>sv :source $MYVIMRC<CR>
 nnoremap <space> za
 
 
