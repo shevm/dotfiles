@@ -2,6 +2,10 @@ set nocompatible        "required
 filetype off            "required
 
 
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
+
 "=====PLUGIN MANAGER=====
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -14,7 +18,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-surround'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'cjrh/vim-conda'
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_added = '+'
@@ -49,11 +53,8 @@ set scrolloff=999
 " Color scheme
 let python_highlight_all=1
 set  t_Co=256
-" colo desert
-if has('gui_running')
-  set background=dark
-  colorscheme desert
-endif
+colo desert
+" set background=dark
 
 
 "Showing line numbers and length
@@ -87,6 +88,10 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" Easier split resizing
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
 
 "=====KEYMAP=====
 
@@ -101,8 +106,8 @@ set clipboard=unnamed
 
 
 "git bindings
-nnoremap <Leader>hn :GitGutterNextHunk<CR>      " git next
-nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " git previous
+nnoremap <Leader>hn :GitGutterNextHunk<CR>      " hunk next
+nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " hunk previous
 
 
 nnoremap <F5> :w<CR>:!clear;python3 %<CR>
