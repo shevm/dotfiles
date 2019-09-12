@@ -26,9 +26,6 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
 
-Plugin 'jreybert/vimagit'
-Plugin 'kien/ctrlp.vim'
-
 call vundle#end()            " required
 
 
@@ -40,6 +37,7 @@ autocmd! bufwritepost .vimrc source %
 " Syntax and highlighting
 filetype plugin indent on
 syntax on
+colo desert
 
 
 " Behavior
@@ -52,8 +50,9 @@ set scrolloff=999
 " Color scheme
 let python_highlight_all=1
 set  t_Co=256
+<<<<<<< HEAD
 colo desert
-" set background=dark
+set background=dark
 
 
 "Showing line numbers and length
@@ -73,26 +72,20 @@ let g:netrw_winsize = 25
 "setlocal foldmethod=expr
 
 
-" Mapleader
+"Mapleader
 let mapleader = ","
 
 
-" Better search
-set ignorecase
-set smartcase
+" Backspace
+set bs=2
 
 
-" Disable backup
-set nobackup
-set nowritebackup
-set noswapfile
+"=====KEYMAP=====
 
 " Easier split resizing
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
-
-"=====KEYMAP=====
 
 "Better indentation
 vnoremap < <gv
@@ -109,9 +102,11 @@ nnoremap <Leader>hn :GitGutterNextHunk<CR>      " hunk next
 nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " hunk previous
 
 
-nnoremap <F5> :w<CR>:!clear;python3 %<CR>
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-" nnoremap <Leader>sv :source $MYVIMRC<CR>
+" Edit and run files
+nnoremap <F5> :w<CR>:!clear;python %<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>evon :vsplit $MYVIMRC<cr>:on<cr>
+" nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <space> za
 
 
@@ -131,21 +126,10 @@ noremap <C-]> g<C-]>
 
 
 "File specific settings
-set tabstop=4 
-set softtabstop=4 
-set shiftwidth=4 
-set textwidth=119 
-set expandtab 
-set autoindent 
-
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.cpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.c set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
-
-
-"=====ABBREVIATIONS=====
-iab MS Mikhail Shevchenko
 
