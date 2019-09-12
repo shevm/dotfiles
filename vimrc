@@ -16,7 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-surround'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'cjrh/vim-conda'
