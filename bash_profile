@@ -1,5 +1,3 @@
-# alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-
 # key bindings
 alias la="ls -la"
 
