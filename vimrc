@@ -2,10 +2,6 @@ set nocompatible        "required
 filetype off            "required
 
 
-" python3 from powerline.vim import setup as powerline_setup
-" python3 powerline_setup()
-" python3 del powerline_setup
-
 "=====PLUGIN MANAGER=====
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,9 +12,21 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
+
+Plugin 'jreybert/vimagit'
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tmhedberg/SimpylFold'
+let g:SimpylFold_docstring_preview=1
+
 Plugin 'ycm-core/YouCompleteMe'
-Plugin 'cjrh/vim-conda'
+let g:ycm_autoclose_preview_window_after_completion=1
+map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '>'
