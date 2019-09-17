@@ -115,11 +115,9 @@ nnoremap <Leader>hn :GitGutterNextHunk<CR>      " hunk next
 nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " hunk previous
 
 
-" Edit and run files
-nnoremap <F5> :w<CR>:!clear;python %<CR>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>evon :vsplit $MYVIMRC<cr>:on<cr>
-" nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <F5> :w<CR>:!clear;python3 %<CR>
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <Leader>evon :vsplit $MYVIMRC<CR>:on<CR>
 nnoremap <space> za
 
 
