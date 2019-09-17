@@ -62,9 +62,8 @@ set scrolloff=999
 " Color scheme
 let python_highlight_all=1
 set  t_Co=256
-<<<<<<< HEAD
 colo desert
-set background=dark
+" set background=dark
 
 
 "Showing line numbers and length
