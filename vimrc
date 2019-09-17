@@ -83,12 +83,13 @@ let g:netrw_winsize = 25
 "setlocal foldmethod=expr
 
 
-"Mapleader
+" Mapleader
 let mapleader = ","
 
 
-" Backspace
-set bs=2
+" Better search
+set ignorecase
+set smartcase
 
 
 "=====KEYMAP=====
