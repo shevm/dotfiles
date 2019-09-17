@@ -60,7 +60,7 @@ set bs=2
 
 
 " Color scheme
-let python_highlight_all=1
+let g:highlighting = 0
 set  t_Co=256
 colo desert
 " set background=dark
@@ -124,6 +124,18 @@ nnoremap <space> za
 "Easy esc
 inoremap jk <esc>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
+
+" Highlighting
+function! Highlighting()
+  if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
+    let g:highlighting = 0
+    return ":silent nohlsearch\<CR>"
+  endif
+  let @/ = '\<'.expand('<cword>').'\>'
+  let g:highlighting = 1
+  return ":silent set hlsearch\<CR>"
+endfunction
+nnoremap <silent> <expr> <CR> Highlighting()
 
 
 "split settings
