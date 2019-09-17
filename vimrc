@@ -49,14 +49,14 @@ autocmd! bufwritepost .vimrc source %
 " Syntax and highlighting
 filetype plugin indent on
 syntax on
-colo desert
+let python_highlight_all=1
 
 
 " Behavior
-set encoding=utf-8
 set listchars=tab:>-
 set list
 set scrolloff=999
+set bs=2
 
 
 " Color scheme
