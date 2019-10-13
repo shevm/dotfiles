@@ -25,7 +25,8 @@ let g:SimpylFold_docstring_preview=1
 
 Plugin 'ycm-core/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
-map <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_confirm_extra_conf=0
+noremap <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_added = '+'
@@ -37,6 +38,8 @@ nnoremap <Leader>gn :GitGutterNextHunk<CR>
 nnoremap <Leader>gp :GitGutterPrevHunk<CR>
 nnoremap <Leader>ga :GitGutterStageHunk<CR>
 nnoremap <Leader>gu :GitGutterUndoHunk<CR>
+
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()            " required
 
@@ -98,16 +101,21 @@ set nowritebackup
 set noswapfile
 
 
+"Better copy & paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+
+" Add tags
+set tags=./tags;/
+" set tags+=$HOME/site_packages/fastai/tags
+
+
 "=====KEYMAP=====
 
 "Better indentation
 vnoremap < <gv
 vnoremap > >gv
-
-
-"Better copy & paste
-set pastetoggle=<F2>
-set clipboard=unnamed
 
 
 "git bindings
@@ -159,5 +167,6 @@ au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=
 
 
 "=====ABBREVIATIONS=====
+
 iab MS Mikhail Shevchenko
 
