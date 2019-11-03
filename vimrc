@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The bundles you install will be listed here
 
-
+Plugin 'vim-airline/vim-airline'
 Plugin 'jreybert/vimagit'
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
