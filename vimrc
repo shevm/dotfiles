@@ -52,7 +52,7 @@ call vundle#end()            " required
 "=====PREFERENCES=====
 
 " Auto source .vimrc after save
-au BufNewFile,BufRead .vimrc lcd Documents/Projects/dotfiles/
+au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
 autocmd! bufwritepost .vimrc source %
 
 " Syntax and highlighting
