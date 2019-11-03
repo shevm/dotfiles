@@ -41,6 +41,11 @@ nnoremap <Leader>gu :GitGutterUndoHunk<CR>
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'francoiscabrol/ranger.vim'
+let g:ranger_map_keys = 0
+let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+nnoremap <leader>f :Ranger<CR>
+
 call vundle#end()            " required
 
 
