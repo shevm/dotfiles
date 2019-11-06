@@ -52,7 +52,7 @@ call vundle#end()            " required
 "=====PREFERENCES=====
 
 " Auto source .vimrc after save
-au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
+"au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
 autocmd! bufwritepost .vimrc source %
 
 " Syntax and highlighting
@@ -139,7 +139,7 @@ nnoremap <space> za
 inoremap jk <esc>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
 
-" Highlighting
+"Highlighting
 function! Highlighting()
   if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
     let g:highlighting = 0
