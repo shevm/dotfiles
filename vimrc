@@ -52,7 +52,7 @@ call vundle#end()            " required
 "=====PREFERENCES=====
 
 " Auto source .vimrc after save
-au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
+"au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
 autocmd! bufwritepost .vimrc source %
 
 " Syntax and highlighting
@@ -139,7 +139,7 @@ nnoremap <space> za
 inoremap jk <esc>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
 
-" Highlighting
+"Highlighting
 function! Highlighting()
   if g:highlighting == 1 && @/ =~ '^\\<'.expand('<cword>').'\\>$'
     let g:highlighting = 0
@@ -152,7 +152,7 @@ endfunction
 nnoremap <silent> <expr> <CR> Highlighting()
 
 
-"split settings
+"Split settings
 set splitbelow
 set splitright
 nnoremap <C-J> <C-W><C-J>
@@ -162,6 +162,11 @@ nnoremap <C-H> <C-W><C-H>
 noremap <C-]> g<C-]>
 nnoremap <Leader>= :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
+
+
+"Set default encoding
+set encoding=utf-8
+
 
 "File specific settings
 au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent encoding=utf-8 fileformat=unix
@@ -173,6 +178,5 @@ au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=
 
 
 "=====ABBREVIATIONS=====
-
 iab MS Mikhail Shevchenko
 
