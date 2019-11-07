@@ -1,6 +1,8 @@
 set nocompatible        "required
 filetype off            "required
 
+let mapleader = ","
+
 
 "=====PLUGIN MANAGER=====
 
