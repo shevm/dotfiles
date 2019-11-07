@@ -130,7 +130,7 @@ nnoremap <space> za
 inoremap jk <ESC>
 vnoremap jk <ESC>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
-nnoremap todo I№ TODO
+nnoremap todo I# TODO 
 
 
 "Highlighting
