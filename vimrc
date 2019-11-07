@@ -26,7 +26,6 @@ let g:SimpylFold_docstring_preview=1
 Plugin 'ycm-core/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
-noremap <Leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 Plugin 'airblade/vim-gitgutter'
 let g:gitgutter_sign_added = '+'
@@ -34,10 +33,8 @@ let g:gitgutter_sign_modified = '>'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = '<'
-nnoremap <Leader>gn :GitGutterNextHunk<CR>
-nnoremap <Leader>gp :GitGutterPrevHunk<CR>
-nnoremap <Leader>ga :GitGutterStageHunk<CR>
-nnoremap <Leader>gu :GitGutterUndoHunk<CR>
+nnoremap gn <Plug>(GitGutterNextHunk)
+nnoremap gp <Plug>(GitGutterPrevHunk)
 
 Plugin 'majutsushi/tagbar'
 
@@ -51,8 +48,11 @@ call vundle#end()            " required
 
 "=====PREFERENCES=====
 
+" Mapleader
+let mapleader = ","
+
+
 " Auto source .vimrc after save
-"au BufNewFile,BufRead .vimrc lcd /Users/mikhailshevchenko/Documents/Projects/dotfiles/
 autocmd! bufwritepost .vimrc source %
 
 " Syntax and highlighting
@@ -69,7 +69,6 @@ set bs=2
 
 
 " Color scheme
-let g:highlighting = 0
 set  t_Co=256
 colo desert
 " set background=dark
@@ -90,10 +89,6 @@ let g:netrw_winsize = 25
 "Fold Preferences
 "set foldcolumn=3
 "setlocal foldmethod=expr
-
-
-" Mapleader
-let mapleader = ","
 
 
 " Better search
@@ -124,19 +119,16 @@ vnoremap < <gv
 vnoremap > >gv
 
 
-"git bindings
-nnoremap <Leader>hn :GitGutterNextHunk<CR>      " hunk next
-nnoremap <Leader>hp :GitGutterPrevHunk<CR>      " hunk previous
-
-
+"TODO add title here
 nnoremap <F5> :w<CR>:!clear;python3 %<CR>
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>evon :vsplit $MYVIMRC<CR>:on<CR>
 nnoremap <space> za
 
 
-"Easy esc
-inoremap jk <esc>
+"Additional functionality
+inoremap jk <ESC>
+vnoremap jk <ESC>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
 
 "Highlighting
@@ -160,8 +152,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 noremap <C-]> g<C-]>
-nnoremap <Leader>= :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
 
 
 "Set default encoding
