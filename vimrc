@@ -120,7 +120,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 
-"TODO add title here
+"Development mappings
 nnoremap <F5> :w<CR>:!clear;python3 %<CR>
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <Leader>evon :vsplit $MYVIMRC<CR>:on<CR>
