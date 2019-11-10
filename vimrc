@@ -75,9 +75,12 @@ colo desert
 " set background=dark
 
 
-"Showing line numbers and length
+" Showing line numbers and length
 set nu
 set relativenumber
+
+
+" Text wrapping
 set nowrap      " don't automatically wrap text while loading
 set fo-=t       " don't automatically wrap text while typing
 
