@@ -91,8 +91,8 @@ let g:netrw_winsize = 25
 
 
 "Fold Preferences
-"set foldcolumn=3
-"setlocal foldmethod=expr
+set foldcolumn=3
+setlocal foldmethod=expr
 
 
 " Better search
