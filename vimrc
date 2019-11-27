@@ -117,7 +117,6 @@ nnoremap <space> za
 inoremap jk <ESC>
 vnoremap jk <ESC>
 inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>   " run file
-nnoremap todo O# TODO 
 
 " "Highlighting
 " function! Highlighting()
@@ -154,6 +153,7 @@ au BufNewFile,BufRead *.md set filetype=markdown.pandoc
 
 "Dev shortcuts
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()<ESC>
+nnoremap <Leader>t O# TODO 
 
 "Import abbreviations
 so ~/.vim/abbr/abbr.vim
