@@ -97,8 +97,7 @@ set clipboard=unnamed
 
 " Add tags
 set tags=./tags,tags;$HOME
-set tags+=~/.vim/tags/pandas-tags
-" set tags+=$HOME/site_packages/fastai/tags
+set tags+=~/.vim/tags/*-tags/tags
 
 
 "=====KEYMAP=====
