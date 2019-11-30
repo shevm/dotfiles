@@ -157,6 +157,7 @@ noremap <C-]> g<C-]>
 "Set default encoding for YCM
 " {{{
 set encoding=utf-8
+" }}}
 
 "File specific settings
 " {{{
@@ -175,6 +176,10 @@ command! MakeTags !ctags -R .
 
 
 "=====ABBREVIATIONS=====
+
+"Dev shortcuts
+nnoremap <Leader>b Oimport pdb; pdb.set_trace()<ESC>
+nnoremap <Leader>t O# TODO 
 
 "Import abbreviations
 source ~/.vim/abbr/*.vim
