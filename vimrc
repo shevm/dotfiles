@@ -41,6 +41,7 @@ nmap <Leader>ga <Plug>(GitGutterStageHunk)
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 
 Plugin 'majutsushi/tagbar'
+nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
 
 Plugin 'francoiscabrol/ranger.vim'
 let g:ranger_map_keys = 0
