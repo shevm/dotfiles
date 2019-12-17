@@ -5,7 +5,7 @@ let mapleader = ","
 
 
 "=====PLUGIN MANAGER=====
-
+" {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -42,13 +42,8 @@ nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 
 Plugin 'majutsushi/tagbar'
 
-Plugin 'francoiscabrol/ranger.vim'
-let g:ranger_map_keys = 0
-let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
-nnoremap <Leader>f :Ranger<CR>
-
 call vundle#end()            " required
-
+" }}}
 
 "=====PREFERENCES=====
 
