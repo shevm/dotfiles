@@ -110,6 +110,17 @@ set clipboard=unnamed
 "set tags=./tags,tags;$HOME
 set tags+=~/.vim/tags/*-tags/tags
 
+" Set VIM defaults
+set nolist
+set wrap
+set linebreak
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=119
+set expandtab
+set autoindent
+set encoding=utf-8
 
 
 "=====KEY BINDINGS=====
@@ -150,17 +161,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 noremap <C-]> g<C-]>
 
-" Set VIM defaults
-set nolist
-set wrap
-set linebreak
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set textwidth=119
-set expandtab
-set autoindent
-set encoding=utf-8
 
 "=====AUTOCOMMANDS=====
 
