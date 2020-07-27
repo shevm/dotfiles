@@ -168,14 +168,13 @@ noremap <C-]> g<C-]>
 autocmd! bufwritepost .vimrc source %
 
 "File specific settings
-au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.cpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.c set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
-au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 textwidth=119 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.cpp set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.c set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.h set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
+au BufNewFile,BufRead *.hpp set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent fileformat=unix
 au BufNewFile,BufRead *.md set filetype=markdown.pandoc
-
 
 
 "=====COMMANDS=====
@@ -186,4 +185,16 @@ command! MakeTags !ctags -R .
 
 "Import abbreviations
 source ~/.vim/abbr/*.vim
+
+
+"=====FUNCTIONS=====
+function! s:PingCursor()
+  set cursorline cursorcolumn
+  redraw
+  execute 'sleep' 250 . 'm'
+  set nocursorline nocursorcolumn
+endfunction
+
+command PingCursor :call s:PingCursor()
+noremap <leader>p :PingCursor<CR>
 
