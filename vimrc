@@ -51,6 +51,8 @@ nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
 
+Plugin 'jiangmiao/auto-pairs'
+
 call vundle#end()            " required
 
 
