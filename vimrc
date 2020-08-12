@@ -51,31 +51,26 @@ nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
 
-Plugin 'jiangmiao/auto-pairs'
-
 call vundle#end()            " required
 
 
 "=====PREFERENCES=====
 
 " Behavior
-set encoding=utf-8
 set listchars=tab:>-
 set list
 set scrolloff=999
+set bs=2
+set path+=**
 set wildmenu
-filetype plugin indent on
-set foldcolumn=3
-setlocal foldmethod=expr
-set ignorecase
-set smartcase
-"set path+=**
 
 
 " Visual
-colo desert
+"set t_Co=256
+colo solarized
 set background=dark
 syntax on
+filetype plugin indent on
 let python_highlight_all=1
 set nu
 set relativenumber
@@ -91,6 +86,16 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 25
 
 
+" Fold Preferences
+set foldcolumn=3
+setlocal foldmethod=expr
+
+
+" Better search
+set ignorecase
+set smartcase
+
+
 " Disable backup
 set nobackup
 set nowritebackup
@@ -99,6 +104,23 @@ set noswapfile
 
 " Better copy & paste
 set clipboard=unnamed
+
+
+" Add tags
+"set tags=./tags,tags;$HOME
+set tags+=~/.vim/tags/*-tags/tags
+
+" Set VIM defaults
+set nolist
+set wrap
+set linebreak
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=119
+set expandtab
+set autoindent
+set encoding=utf-8
 
 
 "=====KEY BINDINGS=====
@@ -125,6 +147,11 @@ nnoremap <Leader>t O# TODO
 inoremap kk <c-v>u2713
 inoremap xx <c-v>u2715
 
+" Project setup
+"let $PROJDIR = fnameescape('$HOME\Atos\B&PS Dashboards - BI & Analytics - Documents\mgtdash')
+"let $AIPROD = fnameescape('$HOME\OneDrive - Atos\Projects\AI_demo')
+"nnoremap <Leader>cd :cd $AIPROD<CR>:pwd<CR>
+
 "Split settings
 set splitbelow
 set splitright
@@ -150,8 +177,24 @@ au BufNewFile,BufRead *.js,*.html,*.css: set tabstop=2 softtabstop=2 shiftwidth=
 au BufNewFile,BufRead *.md set filetype=markdown.pandoc
 
 
+"=====COMMANDS=====
+command! MakeTags !ctags -R .
+
+
+"=====ABBREVIATIONS=====
+
 "Import abbreviations
 source ~/.vim/abbr/*.vim
 
-" Add tags
-set tags+=~/.vim/tags/*-tags/tags
+
+"=====FUNCTIONS=====
+function! s:PingCursor()
+  set cursorline cursorcolumn
+  redraw
+  execute 'sleep' 250 . 'm'
+  set nocursorline nocursorcolumn
+endfunction
+
+command PingCursor :call s:PingCursor()
+noremap <leader>p :PingCursor<CR>
+
