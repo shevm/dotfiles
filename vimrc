@@ -73,7 +73,7 @@ set smartcase
 
 
 " Visual
-colo solarized
+colo desert
 set background=dark
 syntax on
 let python_highlight_all=1
@@ -81,24 +81,24 @@ set nu
 set relativenumber
 
 
-"" Text wrapping
-"set nowrap      " don't automatically wrap text while loading
-"set fo-=t       " don't automatically wrap text while typing
+" Text wrapping
+set nowrap      " don't automatically wrap text while loading
+set fo-=t       " don't automatically wrap text while typing
 
 
-"" File explorer
-"let g:netrw_browse_split = 4
-"let g:netrw_winsize = 25
+" File explorer
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
 
 
-"" Disable backup
-"set nobackup
-"set nowritebackup
-"set noswapfile
+" Disable backup
+set nobackup
+set nowritebackup
+set noswapfile
 
 
-"" Better copy & paste
-"set clipboard=unnamed
+" Better copy & paste
+set clipboard=unnamed
 
 
 "=====KEY BINDINGS=====
