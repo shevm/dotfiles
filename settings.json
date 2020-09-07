@@ -1,6 +1,6 @@
 {
     "python.pythonPath": "/Users/mikhailshevchenko/anaconda3/bin",
-    "python.languageServer": "Jedi",
+    "python.languageServer": "Microsoft",
     "python.autoComplete.addBrackets": true,
 
     "editor.lineNumbers": "relative",
@@ -30,5 +30,9 @@
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false
-    }
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "terminal.integrated.inheritEnv": false,
+    "window.zoomLevel": 1
 }

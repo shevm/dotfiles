@@ -1,7 +1,7 @@
 // Place your key bindings in this file to override the defaults
 [
     {
-        "key": "ctrl+alt+y",  // use   "key": "ctrl+`"   here if you used it above
+        "key": "ctrl+alt+t",  // use   "key": "ctrl+`"   here if you used it above
         "command": "workbench.action.toggleMaximizedPanel",
         //"when": "!terminalFocus"
     },
