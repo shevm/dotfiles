@@ -1,0 +1,28 @@
+--date-format %Y-%m-%d
+--file ~/Documents/Projects/books/personal/ledger.dat
+--price-db ~/Documents/Projects/books/currencies.dat
+--limit "commodity=~/pln/"
+--wide
+
+alias IO=Immediate Obligations
+alias TE=True Expenses
+alias QL=Quality of Life
+
+commodity PLN
+    note Polish Zloty
+    format PLN 1,000.00
+    nomarket
+    default
+
+commodity EUR
+    note Euro
+    format EUR 1,000.00
+    nomarket
+
+commodity CHF
+    note Swiss Frank
+    format CHF 1,000.00
+    nomarket
+
+P 2020-12-21 EUR PLN 4.40
+P 2020-12-21 CHF PLN 4.0
