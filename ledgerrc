@@ -3,6 +3,7 @@
 --price-db ~/Documents/Projects/books/currencies.dat
 --limit "commodity=~/pln/"
 --wide
+--strict
 
 alias IO=Immediate Obligations
 alias TE=True Expenses
