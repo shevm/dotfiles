@@ -24,6 +24,8 @@ Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 Plugin 'jiangmiao/auto-pairs'
 
+Plugin 'easymotion/vim-easymotion'
+
 call vundle#end()            " required
 
 
