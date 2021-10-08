@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The bundles you install will be listed here
 
 Plugin 'altercation/vim-colors-solarized' 
+let g:solarized_termcolors=16
 Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -42,9 +43,9 @@ set wildmenu
 
 " Visual
 "set t_Co=256
-colo solarized 		" change to desert if solarized is not installed
 set background=dark
 syntax on
+colo solarized		" change to desert if solarized is not installed
 filetype plugin indent on
 let python_highlight_all=1
 set nu
@@ -76,7 +77,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-
+  
 " Better copy & paste
 set clipboard=unnamed
 
