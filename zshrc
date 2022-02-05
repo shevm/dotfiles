@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mikhailshevchenko/.oh-my-zsh"
+export ZSH="/Users/shevm/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -114,5 +114,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-eval $(ssh-agent)
-ssh-add ~/.ssh/personal_id 
+# eval $(ssh-agent)
+# ssh-add ~/.ssh/personal_id 
